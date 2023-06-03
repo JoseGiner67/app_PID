@@ -100,7 +100,7 @@ def display_lineplot(df,prov_name,metric):
 
 @st.cache_data
 def read_datos():
-    ventas = 'pages\\ventas_final.csv'
+    ventas = 'pages/ventas_final.csv'
     ventas = pd.read_csv(ventas, encoding='utf-8')
     return ventas
 
