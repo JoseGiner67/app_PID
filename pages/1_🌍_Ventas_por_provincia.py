@@ -158,12 +158,12 @@ def display_bars_secondary_category(df, year, month, prov_name, cat):
 
 @st.cache_data
 def read_datos():
-    ventas = 'pages\\ventas_final.csv'
+    ventas = 'pages/ventas_final.csv'
     ventas = pd.read_csv(ventas, encoding='utf-8')
     return ventas
     
 
-prov_geo = 'pages\\provincias.geojson'
+prov_geo = 'pages/provincias.geojson'
 ventas = read_datos()
 ventas['cod_provincia'] = ventas['cod_provincia'].astype(str)
 
