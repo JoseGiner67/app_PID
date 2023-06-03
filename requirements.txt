@@ -1,0 +1,5 @@
+folium
+plotly.express
+pyuca
+locale
+pandas
