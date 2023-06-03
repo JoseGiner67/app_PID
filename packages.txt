@@ -1,7 +1,2 @@
-folium == 0.14.0
-plotly.express
-pyuca
-pandas
-streamlit_folium
 locales
 locales-all
