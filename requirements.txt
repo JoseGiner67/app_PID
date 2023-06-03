@@ -3,4 +3,4 @@ plotly.express
 pyuca
 pandas
 streamlit_folium
-LC_ALL='es_ES.UTF-8'
+locale.setlocale(locale.LC_ALL,'es_ES.UTF-8')
