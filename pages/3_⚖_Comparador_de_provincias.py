@@ -60,7 +60,7 @@ def display_bar_revenue(df, selected_provs):
 
 @st.cache_data
 def read_datos():
-    ventas = 'pages\\ventas_final.csv'
+    ventas = 'pages/ventas_final.csv'
     ventas = pd.read_csv(ventas, encoding='utf-8')
     ventas['month_and_year'] = pd.to_datetime(ventas["created_at"]).dt.to_period('M').astype(str)
     return ventas
