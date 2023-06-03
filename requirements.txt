@@ -3,4 +3,4 @@ plotly.express
 pyuca
 pandas
 streamlit_folium
-locales-all
+locale-all
