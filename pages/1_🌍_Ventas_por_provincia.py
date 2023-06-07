@@ -177,13 +177,13 @@ year, month = display_time_filters(ventas)
 prov_name = display_prov_filter(ventas)
 
 if month != 'todos los meses' and year != 'todos':
-    st.header(f'Ventas de productos de {cat} en {month} de {year}' )
+    st.header(f'Ventas de productos de {cat.lower()} en {month} de {year}' )
 elif month != 'todos los meses' and year == 'todos':
-    st.header(f'Ventas de productos de {cat} en {month}' )
+    st.header(f'Ventas de productos de {cat.lower()} en {month}' )
 elif month == 'todos los meses' and year != 'todos':
-    st.header(f'Ventas de productos de {cat} en {year}' )
+    st.header(f'Ventas de productos de {cat.lower()} en {year}' )
 else:
-    st.header(f'Ventas de productos de {cat}' )
+    st.header(f'Ventas de productos de {cat.lower()}' )
     
 
 display_map(ventas, year, month, cat)
