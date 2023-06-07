@@ -79,10 +79,12 @@ def display_lineplot(df,prov_name,metric):
     if prov_name != 'todas las provincias':
         df = df[df['provincia'] == prov_name]
     df['month_and_year'] = pd.to_datetime(df["created_at"]).dt.to_period('M').astype(str)
+    
     if metric == 'Unidades vendidas':
         df_cat = df.groupby(['analytic_category','month_and_year'],as_index = False).qty_ordered.sum()
         df_cat.columns = ['Categoría','Fecha','Unidades vendidas']
         fig = px.line(df_cat, x="Fecha", y="Unidades vendidas", color="Categoría")
+        fig.update_traces(hovertemplate= "<b>%{x}<br>Unidades vendidas: %{y}</b>")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
     if metric == 'Ingresos':
