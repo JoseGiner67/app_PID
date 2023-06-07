@@ -59,19 +59,19 @@ def display_piechart(df,prov_name,metric):
     if metric == 'Unidades vendidas':
         df_cat = df.groupby('analytic_category',as_index = False).qty_ordered.sum().sort_values(by = 'qty_ordered', ascending = False)
         fig = px.pie(df_cat, names='analytic_category', values='qty_ordered')
-        fig.update_traces(hovertemplate= "<b>%{label}<br>Unidades vendidas: %{value}</b>")
+        fig.update_traces(hovertemplate= "%{label}<br>Unidades vendidas: %{value}")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
     if metric == 'Ingresos':
         df_cat = df.groupby('analytic_category',as_index = False).revenue.sum().sort_values(by = 'revenue', ascending = False)
         fig = px.pie(df_cat, names='analytic_category', values='revenue')
-        fig.update_traces(hovertemplate= "<b>%{label}<br>Ingresos: %{value} €</b>")
+        fig.update_traces(hovertemplate= "%{label}<br>Ingresos: %{value} €")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
     if metric == 'Beneficios':
         df_cat = df.groupby('analytic_category',as_index = False).profit.sum().round(2).sort_values(by = 'profit', ascending = False)
         fig = px.pie(df_cat, names='analytic_category', values='profit')
-        fig.update_traces(hovertemplate= "<b>%{label}<br>Beneficio: %{value} €</b>")
+        fig.update_traces(hovertemplate= "%{label}<br>Beneficio: %{value} €")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
 
