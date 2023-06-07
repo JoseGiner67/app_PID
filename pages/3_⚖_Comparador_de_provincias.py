@@ -42,9 +42,8 @@ def display_bar_sells(df, selected_provs):
 def display_evol_revenue(df, selected_provs):
     df_prov = df[df['provincia'].isin(selected_provs)]
     df_prov = df_prov.groupby(['provincia','month_and_year'],as_index = False).revenue.sum()
-    df_prov.columns = ['Provincia','Fecha','Ingresos']
-    fig = px.line(df_prov, x="Fecha", y="Ingresos", color="Provincia")
-    fig.update_layout(yaxis_title="Ingresos (€)")
+    df_prov.columns = ['Provincia','Fecha','Ingresos (€)']
+    fig = px.line(df_prov, x="Fecha", y="Ingresos (€)", color="Provincia")
     st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
 def display_bar_revenue(df, selected_provs):
