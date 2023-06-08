@@ -27,7 +27,7 @@ def display_evol_sells(df, selected_provs):
     df_prov = df_prov.groupby(['provincia','month_and_year'],as_index = False).qty_ordered.sum()
     df_prov.columns = ['Provincia','Fecha','Unidades vendidas']
     fig = px.line(df_prov, x="Fecha", y="Unidades vendidas", color="Provincia")
-    fig.update_traces(hovertemplate="Fecha: %{x|%B %Y}<br>"
+    fig.update_traces(hovertemplate="%{x|%B %Y}<br>"
                                 "Unidades vendidas: %{y}")
     st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
@@ -46,7 +46,7 @@ def display_evol_revenue(df, selected_provs):
     df_prov = df_prov.groupby(['provincia','month_and_year'],as_index = False).revenue.sum()
     df_prov.columns = ['Provincia','Fecha','Ingresos (€)']
     fig = px.line(df_prov, x="Fecha", y="Ingresos (€)", color="Provincia")
-    fig.update_traces(hovertemplate="Fecha: %{x|%B %Y}<br>"
+    fig.update_traces(hovertemplate="%{x|%B %Y}<br>"
                                 "Ingresos: %{y:.2f} €")
     st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
