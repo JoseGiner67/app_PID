@@ -93,7 +93,7 @@ def display_lineplot(df,prov_name,metric):
         df_cat.columns = ['Categoría','Fecha','Ingresos (€)']
         fig = px.line(df_cat, x="Fecha", y="Ingresos (€)", color="Categoría")
         fig.update_traces(hovertemplate="%{x|%B %Y}<br>"
-                                "Ingresos: %{y} €")
+                                "Ingresos: %{y:.2f} €")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
     if metric == 'Beneficios':
@@ -101,7 +101,7 @@ def display_lineplot(df,prov_name,metric):
         df_cat.columns = ['Categoría','Fecha','Beneficios (€)']
         fig = px.line(df_cat, x="Fecha", y="Beneficios (€)", color="Categoría")
         fig.update_traces(hovertemplate="Fecha: %{x|%B %Y}<br>"
-                                "Beneficios: %{y} €")
+                                "Beneficios: %{y:.2f} €")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
 
