@@ -84,7 +84,7 @@ def display_lineplot(df,prov_name,metric):
         df_cat = df.groupby(['analytic_category','month_and_year'],as_index = False).qty_ordered.sum()
         df_cat.columns = ['Categoría','Fecha','Unidades vendidas']
         fig = px.line(df_cat, x="Fecha", y="Unidades vendidas", color="Categoría")
-        fig.update_traces(hovertemplate="Fecha: %{x|%m-%Y}<br>"
+        fig.update_traces(hovertemplate="Fecha: %{x|%B %Y}<br>"
                                 "Unidades vendidas: %{y}")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
