@@ -85,7 +85,6 @@ def display_lineplot(df,prov_name,metric):
         df_cat.columns = ['Categoría','Fecha','Unidades vendidas']
         fig = px.line(df_cat, x="Fecha", y="Unidades vendidas", color="Categoría", customdata=["Categoría"])
         fig.update_traces(hovertemplate="Fecha: %{x}<br>"
-                                "Categoría: %{customdata[0]}<br>"
                                 "Unidades vendidas: %{y}")
         st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
