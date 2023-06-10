@@ -6,7 +6,6 @@ Created on Thu May 25 12:41:38 2023
 """
 import pandas as pd
 import streamlit as st
-import numpy as np
 import folium
 from streamlit_folium import st_folium
 import locale
